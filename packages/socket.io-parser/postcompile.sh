@@ -5,4 +5,6 @@ cp ./support/package.esm.json ./build/esm/package.json
 
 cp -r ./build/esm/ ./build/esm-debug/
 
-sed -i '/debug(/d' ./build/esm/*.js
+for file in ./build/esm/*.js; do
+  sed -i '' '/debug(/d' "$file"
+done
